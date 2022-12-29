@@ -48,16 +48,17 @@ void DeleteF(){
    
 }
 void DeleteB(){
-    struct node *temp;
+    struct node *temp,*prev;
     if(head==NULL){
         printf("No Elements to delete");
     }
     else{
         temp=head;
-        while(temp!=NULL){
+        while(temp->next!=NULL){
+            prev=temp;
             temp=temp->next;
         }
-        temp->next=NULL;
+        prev->next=NULL;
     }
 }
 void display(){
